@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Metronome-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" title="Metronome" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MetroGroove_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="50" height="50" alignment="center" verticalAlignment="center" title="Go" id="2IS-YQ-5GD">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.79574434422894724" blue="0.031429893092105261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="toggle" destination="AgC-eL-Hgc" id="2ld-JY-9Qb"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="left" id="gnI-gt-dsh">
+                            <items>
+                                <label width="45" alignment="center" text="4/4" textAlignment="center" id="081-Kr-7YL">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="67" alignment="center" text="120 bpm" textAlignment="right" id="6l3-bK-P7P">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Settings" id="UZH-2D-kxI">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.28488212719298239" green="0.27850877192982454" blue="0.27850877192982454" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="6O6-RT-ztY" kind="push" id="kEW-6m-bQX"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="beatButton" destination="2IS-YQ-5GD" id="LCz-aT-kuo"/>
+                        <outlet property="bpmLabel" destination="6l3-bK-P7P" id="S44-in-ljX"/>
+                        <outlet property="timeSigLabel" destination="081-Kr-7YL" id="5o4-ji-Oec"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Fel-Al-aQC">
+            <objects>
+                <controller identifier="Setup" title="Settings" spacing="0.0" hidesWhenLoading="NO" id="6O6-RT-ztY" customClass="GrooveController" customModule="MetroGroove_WatchKit_Extension">
+                    <items>
+                        <switch width="1" alignment="left" title="Shuffle" id="pce-17-q3h">
+                            <connections>
+                                <action selector="setShuffle:" destination="6O6-RT-ztY" id="q5A-wG-cby"/>
+                            </connections>
+                        </switch>
+                        <group width="126" height="34" alignment="center" id="w4l-yM-voY">
+                            <items>
+                                <button width="28" alignment="left" title="&lt;" id="7ob-Br-png">
+                                    <connections>
+                                        <action selector="moveLeft" destination="6O6-RT-ztY" id="XDu-tn-xUn"/>
+                                    </connections>
+                                </button>
+                                <label width="22" alignment="left" text="1" textAlignment="center" id="3ZR-we-8sH">
+                                    <fontDescription key="font" type="system" pointSize="30"/>
+                                </label>
+                                <label width="22" alignment="left" text="2" textAlignment="center" id="SMD-jk-toF">
+                                    <fontDescription key="font" type="system" pointSize="30"/>
+                                </label>
+                                <label width="22" alignment="left" text="0" textAlignment="center" id="G7N-3v-70u">
+                                    <fontDescription key="font" type="system" pointSize="30"/>
+                                </label>
+                                <button width="28" alignment="left" title="&gt;" id="97w-ZK-XGO">
+                                    <connections>
+                                        <action selector="moveRight" destination="6O6-RT-ztY" id="mv9-As-Dj2"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <slider width="1" height="38" alignment="left" continuous="YES" value="120" minimum="40" maximum="200" steps="160" id="IFc-xT-ci4">
+                            <connections>
+                                <action selector="setTempo:" destination="6O6-RT-ztY" id="gjQ-NJ-kQN"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="k6X-Hf-YrX">
+                            <items>
+                                <label width="32" height="1" alignment="left" text="Bts" textAlignment="center" id="8tb-U2-7ml">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                                <button width="32" alignment="left" title="2" id="moA-bO-hY5">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="set2Beats" destination="6O6-RT-ztY" id="e8x-8q-2m9"/>
+                                    </connections>
+                                </button>
+                                <button width="32" alignment="left" title="3" id="6Um-yo-qNZ">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="set3Beats" destination="6O6-RT-ztY" id="gAp-7Q-wgU"/>
+                                    </connections>
+                                </button>
+                                <button width="32" alignment="left" title="4" enabled="NO" id="2wX-RP-TWP">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="set4Beats" destination="6O6-RT-ztY" id="URr-33-7GC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="digit1" destination="G7N-3v-70u" id="Ms0-TT-aD4"/>
+                        <outlet property="digit2" destination="SMD-jk-toF" id="dJv-NU-9bh"/>
+                        <outlet property="digit3" destination="3ZR-we-8sH" id="StT-bq-mWf"/>
+                        <outlet property="fourBeatButton" destination="2wX-RP-TWP" id="2tw-cC-vfA"/>
+                        <outlet property="shuffleSwitch" destination="pce-17-q3h" id="VNV-9D-9qy"/>
+                        <outlet property="tempoSlider" destination="IFc-xT-ci4" id="Lfq-KM-hPe"/>
+                        <outlet property="threeBeatButton" destination="6Um-yo-qNZ" id="e7A-TO-vID"/>
+                        <outlet property="twoBeatButton" destination="moA-bO-hY5" id="yW7-Ek-K27"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="517" y="346"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="MetroGroove_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="MetroGroove_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>

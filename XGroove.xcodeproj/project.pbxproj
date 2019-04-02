@@ -1,0 +1,1129 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A01A76DE9555E80D10E25A3 /* Pods_MetroGroove_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7044831DA9E02771E2EED3C1 /* Pods_MetroGroove_WatchKit_App.framework */; };
+		230EDF976C0F2945ABEBCF5D /* Pods_XGroove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91182BCE0B222D621C148FA1 /* Pods_XGroove.framework */; };
+		B20CECC71C94B6A1000A4268 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CECC61C94B6A1000A4268 /* DataModel.swift */; };
+		B216709A1B8775200000D3FB /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B21670981B8775200000D3FB /* GeneralUser GS MuseScore v1.442.sf2 */; };
+		B216709B1B8775200000D3FB /* gs_instruments.dls in Resources */ = {isa = PBXBuildFile; fileRef = B21670991B8775200000D3FB /* gs_instruments.dls */; };
+		B22491761C10012C0026DE95 /* PopupMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22491751C10012C0026DE95 /* PopupMenuViewController.swift */; };
+		B22F55941B69203A00E5343A /* MidiSequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F55931B69203A00E5343A /* MidiSequencer.swift */; };
+		B23C75551B9D427700435F24 /* DrumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C75541B9D427700435F24 /* DrumCollectionViewCell.swift */; };
+		B23DF3EE1B53699B000918E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF3ED1B53699B000918E9 /* AppDelegate.swift */; };
+		B23DF3F01B53699B000918E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF3EF1B53699B000918E9 /* MainViewController.swift */; };
+		B23DF3F31B53699B000918E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DF3F11B53699B000918E9 /* Main.storyboard */; };
+		B23DF3F51B53699B000918E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23DF3F41B53699B000918E9 /* Assets.xcassets */; };
+		B23DF3F81B53699B000918E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DF3F61B53699B000918E9 /* LaunchScreen.storyboard */; };
+		B23DF4031B53699B000918E9 /* MetroGrooveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF4021B53699B000918E9 /* MetroGrooveTests.swift */; };
+		B23DF40E1B53699B000918E9 /* MetroGrooveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF40D1B53699B000918E9 /* MetroGrooveUITests.swift */; };
+		B23DF4131B53699B000918E9 /* MetroGroove WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B23DF4121B53699B000918E9 /* MetroGroove WatchKit App.app */; };
+		B23DF4191B53699B000918E9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DF4171B53699B000918E9 /* Interface.storyboard */; };
+		B23DF41B1B53699B000918E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23DF41A1B53699B000918E9 /* Assets.xcassets */; };
+		B23DF4221B53699B000918E9 /* MetroGroove WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B23DF4211B53699B000918E9 /* MetroGroove WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B23DF4291B53699B000918E9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF4281B53699B000918E9 /* InterfaceController.swift */; };
+		B23DF42B1B53699B000918E9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF42A1B53699B000918E9 /* ExtensionDelegate.swift */; };
+		B23DF42D1B53699B000918E9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF42C1B53699B000918E9 /* NotificationController.swift */; };
+		B23DF42F1B53699B000918E9 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF42E1B53699B000918E9 /* GlanceController.swift */; };
+		B23DF4311B53699B000918E9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DF4301B53699B000918E9 /* ComplicationController.swift */; };
+		B23DF4331B53699B000918E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23DF4321B53699B000918E9 /* Assets.xcassets */; };
+		B24312B61C7B6A22000D738F /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24312B51C7B6A22000D738F /* ProjectViewController.swift */; };
+		B24641171E1358220029D1C6 /* PercussionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24641161E1358220029D1C6 /* PercussionCollectionViewController.swift */; };
+		B24991DD1C2D129000D6B304 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24991DC1C2D129000D6B304 /* NoteView.swift */; };
+		B24991E11C2DFF7E00D6B304 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24991E01C2DFF7E00D6B304 /* SettingManager.swift */; };
+		B24991E31C2E13BD00D6B304 /* rest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B24991E21C2E13BD00D6B304 /* rest.mp3 */; };
+		B24991F01C34B67200D6B304 /* PatternPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24991EF1C34B67200D6B304 /* PatternPageViewController.swift */; };
+		B25403111C12955000A9718B /* ProjectFilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25403101C12955000A9718B /* ProjectFilesTableViewController.swift */; };
+		B25403131C15469800A9718B /* SaveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25403121C15469800A9718B /* SaveTableViewController.swift */; };
+		B255B9C31C48700B008E7316 /* iPadMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B255B9C11C48700B008E7316 /* iPadMain.storyboard */; };
+		B255B9C51C489958008E7316 /* MidiFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255B9C41C489958008E7316 /* MidiFileManager.swift */; };
+		B27AD0021CD6F552001E590C /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27AD0011CD6F552001E590C /* MainSplitViewController.swift */; };
+		B27AD0061CD79B65001E590C /* MidiNoteUserCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = B27AD0051CD79B65001E590C /* MidiNoteUserCallback.m */; };
+		B27C84201CDB8EEF00F3593C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C841F1CDB8EEF00F3593C /* UIHelper.swift */; };
+		B27CF4A01C611523009A44B0 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27CF49F1C611523009A44B0 /* AVKit.framework */; };
+		B27FCEAE1C5BC2AC005F2C10 /* PatternFilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FCEAD1C5BC2AC005F2C10 /* PatternFilesTableViewController.swift */; };
+		B2809D5E1B574CF300AB4187 /* GrooveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2809D5D1B574CF300AB4187 /* GrooveController.swift */; };
+		B28712F41C9702770074227D /* ToastFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28712F31C9702770074227D /* ToastFactory.swift */; };
+		B287681E1C82B3CE00E31DE0 /* PopupPatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287681D1C82B3CE00E31DE0 /* PopupPatternTableViewController.swift */; };
+		B28768201C85EAC600E31DE0 /* PatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287681F1C85EAC600E31DE0 /* PatternCollectionViewCell.swift */; };
+		B28FE5811C2AF61A00276CF1 /* PatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FE5801C2AF61A00276CF1 /* PatchManager.swift */; };
+		B2A257871D1776C000547C1E /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A257861D1776C000547C1E /* WatchConnectivity.framework */; };
+		B2B6C4991B71D6A4002E56B5 /* MidiSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6C4981B71D6A4002E56B5 /* MidiSampler.swift */; };
+		B2BB5DF31E0C311D00EAD22C /* PercussionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5DF21E0C311D00EAD22C /* PercussionPageViewController.swift */; };
+		B2CC10EF1BA1DAEF008C90E6 /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CC10EE1BA1DAEF008C90E6 /* PatternTableViewController.swift */; };
+		B2F745D61C6E32F90066C93A /* MidiPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F745D51C6E32F90066C93A /* MidiPlayerViewController.swift */; };
+		D68D97B55A58CE9AB4CCB960 /* Pods_MetroGroove_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4302B8D3CE58945061DF0F9A /* Pods_MetroGroove_WatchKit_Extension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B23DF3FF1B53699B000918E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DF3E21B53699B000918E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DF3E91B53699B000918E9;
+			remoteInfo = MetroGroove;
+		};
+		B23DF40A1B53699B000918E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DF3E21B53699B000918E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DF3E91B53699B000918E9;
+			remoteInfo = MetroGroove;
+		};
+		B23DF4141B53699B000918E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DF3E21B53699B000918E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DF4111B53699B000918E9;
+			remoteInfo = "MetroGroove WatchKit App";
+		};
+		B23DF4231B53699B000918E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DF3E21B53699B000918E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DF4201B53699B000918E9;
+			remoteInfo = "MetroGroove WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B23DF43A1B53699B000918E9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B23DF4221B53699B000918E9 /* MetroGroove WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF43E1B53699B000918E9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B23DF4131B53699B000918E9 /* MetroGroove WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07135090588F869CCB53645D /* Pods-MetroGroove WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroGroove WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetroGroove WatchKit App/Pods-MetroGroove WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		4302B8D3CE58945061DF0F9A /* Pods_MetroGroove_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetroGroove_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7044831DA9E02771E2EED3C1 /* Pods_MetroGroove_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetroGroove_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		759D8F4DE8D80A0D4CA55E6F /* Pods-MetroGroove WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroGroove WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetroGroove WatchKit Extension/Pods-MetroGroove WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		91182BCE0B222D621C148FA1 /* Pods_XGroove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XGroove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1112594D20919EED919BC5 /* Pods-XGroove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XGroove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XGroove/Pods-XGroove.debug.xcconfig"; sourceTree = "<group>"; };
+		AF5759E75B1ABA051242C8F9 /* Pods-MetroGroove WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroGroove WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetroGroove WatchKit Extension/Pods-MetroGroove WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		B140BD3747E805CA3A8A4E95 /* Pods-XGroove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XGroove.release.xcconfig"; path = "Pods/Target Support Files/Pods-XGroove/Pods-XGroove.release.xcconfig"; sourceTree = "<group>"; };
+		B20CECC61C94B6A1000A4268 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		B21670981B8775200000D3FB /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GeneralUser GS MuseScore v1.442.sf2"; path = "MidiAssets/GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
+		B21670991B8775200000D3FB /* gs_instruments.dls */ = {isa = PBXFileReference; lastKnownFileType = file; name = gs_instruments.dls; path = MidiAssets/gs_instruments.dls; sourceTree = "<group>"; };
+		B22491751C10012C0026DE95 /* PopupMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuViewController.swift; sourceTree = "<group>"; };
+		B22F55931B69203A00E5343A /* MidiSequencer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiSequencer.swift; sourceTree = "<group>"; };
+		B23C75541B9D427700435F24 /* DrumCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrumCollectionViewCell.swift; sourceTree = "<group>"; };
+		B23DF3EA1B53699B000918E9 /* XGroove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XGroove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DF3ED1B53699B000918E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B23DF3EF1B53699B000918E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B23DF3F21B53699B000918E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B23DF3F41B53699B000918E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23DF3F71B53699B000918E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B23DF3F91B53699B000918E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DF3FE1B53699B000918E9 /* MetroGrooveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetroGrooveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DF4021B53699B000918E9 /* MetroGrooveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroGrooveTests.swift; sourceTree = "<group>"; };
+		B23DF4041B53699B000918E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DF4091B53699B000918E9 /* MetroGrooveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetroGrooveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DF40D1B53699B000918E9 /* MetroGrooveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroGrooveUITests.swift; sourceTree = "<group>"; };
+		B23DF40F1B53699B000918E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DF4121B53699B000918E9 /* MetroGroove WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MetroGroove WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DF4181B53699B000918E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B23DF41A1B53699B000918E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23DF41C1B53699B000918E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DF4211B53699B000918E9 /* MetroGroove WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MetroGroove WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DF4271B53699B000918E9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B23DF4281B53699B000918E9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B23DF42A1B53699B000918E9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B23DF42C1B53699B000918E9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B23DF42E1B53699B000918E9 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		B23DF4301B53699B000918E9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		B23DF4321B53699B000918E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23DF4341B53699B000918E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B24312B51C7B6A22000D738F /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		B24641161E1358220029D1C6 /* PercussionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercussionCollectionViewController.swift; sourceTree = "<group>"; };
+		B24991DC1C2D129000D6B304 /* NoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		B24991E01C2DFF7E00D6B304 /* SettingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
+		B24991E21C2E13BD00D6B304 /* rest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = rest.mp3; path = MidiAssets/rest.mp3; sourceTree = "<group>"; };
+		B24991EF1C34B67200D6B304 /* PatternPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternPageViewController.swift; sourceTree = "<group>"; };
+		B25403101C12955000A9718B /* ProjectFilesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectFilesTableViewController.swift; sourceTree = "<group>"; };
+		B25403121C15469800A9718B /* SaveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTableViewController.swift; sourceTree = "<group>"; };
+		B255B9C21C48700B008E7316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPadMain.storyboard; sourceTree = "<group>"; };
+		B255B9C41C489958008E7316 /* MidiFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiFileManager.swift; sourceTree = "<group>"; };
+		B258DA4F20A0103200589B36 /* MetroGroove.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MetroGroove.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B27AD0011CD6F552001E590C /* MainSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
+		B27AD0031CD79B65001E590C /* MetroGroove-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetroGroove-Bridging-Header.h"; sourceTree = "<group>"; };
+		B27AD0041CD79B65001E590C /* MidiNoteUserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiNoteUserCallback.h; sourceTree = "<group>"; };
+		B27AD0051CD79B65001E590C /* MidiNoteUserCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiNoteUserCallback.m; sourceTree = "<group>"; };
+		B27C841F1CDB8EEF00F3593C /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		B27CF49F1C611523009A44B0 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		B27FCEAD1C5BC2AC005F2C10 /* PatternFilesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternFilesTableViewController.swift; sourceTree = "<group>"; };
+		B2809D5D1B574CF300AB4187 /* GrooveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrooveController.swift; sourceTree = "<group>"; };
+		B28712F31C9702770074227D /* ToastFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastFactory.swift; sourceTree = "<group>"; };
+		B287681D1C82B3CE00E31DE0 /* PopupPatternTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupPatternTableViewController.swift; path = ../PopupPatternTableViewController.swift; sourceTree = "<group>"; };
+		B287681F1C85EAC600E31DE0 /* PatternCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternCollectionViewCell.swift; sourceTree = "<group>"; };
+		B28FE5801C2AF61A00276CF1 /* PatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchManager.swift; sourceTree = "<group>"; };
+		B2A257861D1776C000547C1E /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		B2B6C4981B71D6A4002E56B5 /* MidiSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiSampler.swift; sourceTree = "<group>"; };
+		B2BB5DF21E0C311D00EAD22C /* PercussionPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercussionPageViewController.swift; sourceTree = "<group>"; };
+		B2CC10EE1BA1DAEF008C90E6 /* PatternTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
+		B2F745D51C6E32F90066C93A /* MidiPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiPlayerViewController.swift; sourceTree = "<group>"; };
+		B711A9A1C17AA926DBA05E92 /* Pods-MetroGroove WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroGroove WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetroGroove WatchKit App/Pods-MetroGroove WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		383C551E789FCF055C890D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A01A76DE9555E80D10E25A3 /* Pods_MetroGroove_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF3E71B53699B000918E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2A257871D1776C000547C1E /* WatchConnectivity.framework in Frameworks */,
+				B27CF4A01C611523009A44B0 /* AVKit.framework in Frameworks */,
+				230EDF976C0F2945ABEBCF5D /* Pods_XGroove.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF3FB1B53699B000918E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF4061B53699B000918E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF41E1B53699B000918E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D68D97B55A58CE9AB4CCB960 /* Pods_MetroGroove_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81B0B7EAF58D2EEBCA0F78AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7044831DA9E02771E2EED3C1 /* Pods_MetroGroove_WatchKit_App.framework */,
+				4302B8D3CE58945061DF0F9A /* Pods_MetroGroove_WatchKit_Extension.framework */,
+				91182BCE0B222D621C148FA1 /* Pods_XGroove.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97C7117ACC6EC7BDE354E5D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07135090588F869CCB53645D /* Pods-MetroGroove WatchKit App.debug.xcconfig */,
+				B711A9A1C17AA926DBA05E92 /* Pods-MetroGroove WatchKit App.release.xcconfig */,
+				759D8F4DE8D80A0D4CA55E6F /* Pods-MetroGroove WatchKit Extension.debug.xcconfig */,
+				AF5759E75B1ABA051242C8F9 /* Pods-MetroGroove WatchKit Extension.release.xcconfig */,
+				AC1112594D20919EED919BC5 /* Pods-XGroove.debug.xcconfig */,
+				B140BD3747E805CA3A8A4E95 /* Pods-XGroove.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B23DF3E11B53699B000918E9 = {
+			isa = PBXGroup;
+			children = (
+				B258DA4F20A0103200589B36 /* MetroGroove.playground */,
+				B2A257861D1776C000547C1E /* WatchConnectivity.framework */,
+				B27CF49F1C611523009A44B0 /* AVKit.framework */,
+				B23DF3EC1B53699B000918E9 /* XGroove */,
+				B23DF4011B53699B000918E9 /* XGrooveTests */,
+				B23DF40C1B53699B000918E9 /* XGrooveUITests */,
+				B23DF4161B53699B000918E9 /* XGroove WatchKit App */,
+				B23DF4251B53699B000918E9 /* XGroove WatchKit Extension */,
+				B23DF3EB1B53699B000918E9 /* Products */,
+				97C7117ACC6EC7BDE354E5D7 /* Pods */,
+				81B0B7EAF58D2EEBCA0F78AE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B23DF3EB1B53699B000918E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B23DF3EA1B53699B000918E9 /* XGroove.app */,
+				B23DF3FE1B53699B000918E9 /* MetroGrooveTests.xctest */,
+				B23DF4091B53699B000918E9 /* MetroGrooveUITests.xctest */,
+				B23DF4121B53699B000918E9 /* MetroGroove WatchKit App.app */,
+				B23DF4211B53699B000918E9 /* MetroGroove WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B23DF3EC1B53699B000918E9 /* XGroove */ = {
+			isa = PBXGroup;
+			children = (
+				B255B9C81C489B7C008E7316 /* Model */,
+				B255B9C71C489A94008E7316 /* View */,
+				B255B9C61C489A34008E7316 /* Controllers */,
+				B252EA261B6A790700254155 /* MidiFiles */,
+				B23DF3F41B53699B000918E9 /* Assets.xcassets */,
+				B255B9C11C48700B008E7316 /* iPadMain.storyboard */,
+				B23DF3F11B53699B000918E9 /* Main.storyboard */,
+				B23DF3F61B53699B000918E9 /* LaunchScreen.storyboard */,
+				B23DF3F91B53699B000918E9 /* Info.plist */,
+				B23DF3ED1B53699B000918E9 /* AppDelegate.swift */,
+			);
+			name = XGroove;
+			path = MetroGroove;
+			sourceTree = "<group>";
+		};
+		B23DF4011B53699B000918E9 /* XGrooveTests */ = {
+			isa = PBXGroup;
+			children = (
+				B23DF4021B53699B000918E9 /* MetroGrooveTests.swift */,
+				B23DF4041B53699B000918E9 /* Info.plist */,
+			);
+			name = XGrooveTests;
+			path = MetroGrooveTests;
+			sourceTree = "<group>";
+		};
+		B23DF40C1B53699B000918E9 /* XGrooveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B23DF40D1B53699B000918E9 /* MetroGrooveUITests.swift */,
+				B23DF40F1B53699B000918E9 /* Info.plist */,
+			);
+			name = XGrooveUITests;
+			path = MetroGrooveUITests;
+			sourceTree = "<group>";
+		};
+		B23DF4161B53699B000918E9 /* XGroove WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				B23DF4171B53699B000918E9 /* Interface.storyboard */,
+				B23DF41A1B53699B000918E9 /* Assets.xcassets */,
+				B23DF41C1B53699B000918E9 /* Info.plist */,
+			);
+			name = "XGroove WatchKit App";
+			path = "MetroGroove WatchKit App";
+			sourceTree = "<group>";
+		};
+		B23DF4251B53699B000918E9 /* XGroove WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B2809D5D1B574CF300AB4187 /* GrooveController.swift */,
+				B23DF4281B53699B000918E9 /* InterfaceController.swift */,
+				B23DF42A1B53699B000918E9 /* ExtensionDelegate.swift */,
+				B23DF42C1B53699B000918E9 /* NotificationController.swift */,
+				B23DF42E1B53699B000918E9 /* GlanceController.swift */,
+				B23DF4301B53699B000918E9 /* ComplicationController.swift */,
+				B23DF4321B53699B000918E9 /* Assets.xcassets */,
+				B23DF4341B53699B000918E9 /* Info.plist */,
+				B23DF4261B53699B000918E9 /* Supporting Files */,
+			);
+			name = "XGroove WatchKit Extension";
+			path = "MetroGroove WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B23DF4261B53699B000918E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B23DF4271B53699B000918E9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B252EA261B6A790700254155 /* MidiFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B24991E21C2E13BD00D6B304 /* rest.mp3 */,
+				B21670981B8775200000D3FB /* GeneralUser GS MuseScore v1.442.sf2 */,
+				B21670991B8775200000D3FB /* gs_instruments.dls */,
+			);
+			name = MidiFiles;
+			sourceTree = "<group>";
+		};
+		B255B9C61C489A34008E7316 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B23DF3EF1B53699B000918E9 /* MainViewController.swift */,
+				B2BB5DF21E0C311D00EAD22C /* PercussionPageViewController.swift */,
+				B24641161E1358220029D1C6 /* PercussionCollectionViewController.swift */,
+				B24991EF1C34B67200D6B304 /* PatternPageViewController.swift */,
+				B27FCEAD1C5BC2AC005F2C10 /* PatternFilesTableViewController.swift */,
+				B25403101C12955000A9718B /* ProjectFilesTableViewController.swift */,
+				B2CC10EE1BA1DAEF008C90E6 /* PatternTableViewController.swift */,
+				B22491751C10012C0026DE95 /* PopupMenuViewController.swift */,
+				B287681D1C82B3CE00E31DE0 /* PopupPatternTableViewController.swift */,
+				B25403121C15469800A9718B /* SaveTableViewController.swift */,
+				B2F745D51C6E32F90066C93A /* MidiPlayerViewController.swift */,
+				B24312B51C7B6A22000D738F /* ProjectViewController.swift */,
+				B27AD0011CD6F552001E590C /* MainSplitViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B255B9C71C489A94008E7316 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B23C75541B9D427700435F24 /* DrumCollectionViewCell.swift */,
+				B287681F1C85EAC600E31DE0 /* PatternCollectionViewCell.swift */,
+				B24991DC1C2D129000D6B304 /* NoteView.swift */,
+				B28712F31C9702770074227D /* ToastFactory.swift */,
+				B27C841F1CDB8EEF00F3593C /* UIHelper.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B255B9C81C489B7C008E7316 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2B6C4981B71D6A4002E56B5 /* MidiSampler.swift */,
+				B22F55931B69203A00E5343A /* MidiSequencer.swift */,
+				B28FE5801C2AF61A00276CF1 /* PatchManager.swift */,
+				B255B9C41C489958008E7316 /* MidiFileManager.swift */,
+				B24991E01C2DFF7E00D6B304 /* SettingManager.swift */,
+				B20CECC61C94B6A1000A4268 /* DataModel.swift */,
+				B27AD0041CD79B65001E590C /* MidiNoteUserCallback.h */,
+				B27AD0051CD79B65001E590C /* MidiNoteUserCallback.m */,
+				B27AD0031CD79B65001E590C /* MetroGroove-Bridging-Header.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B23DF3E91B53699B000918E9 /* XGroove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DF43F1B53699B000918E9 /* Build configuration list for PBXNativeTarget "XGroove" */;
+			buildPhases = (
+				5A9DCEEEE907F8AE14EAE72A /* [CP] Check Pods Manifest.lock */,
+				B23DF3E61B53699B000918E9 /* Sources */,
+				B23DF3E71B53699B000918E9 /* Frameworks */,
+				B23DF3E81B53699B000918E9 /* Resources */,
+				B23DF43E1B53699B000918E9 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DF4151B53699B000918E9 /* PBXTargetDependency */,
+			);
+			name = XGroove;
+			productName = MetroGroove;
+			productReference = B23DF3EA1B53699B000918E9 /* XGroove.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B23DF3FD1B53699B000918E9 /* MetroGrooveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DF4421B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGrooveTests" */;
+			buildPhases = (
+				B23DF3FA1B53699B000918E9 /* Sources */,
+				B23DF3FB1B53699B000918E9 /* Frameworks */,
+				B23DF3FC1B53699B000918E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DF4001B53699B000918E9 /* PBXTargetDependency */,
+			);
+			name = MetroGrooveTests;
+			productName = MetroGrooveTests;
+			productReference = B23DF3FE1B53699B000918E9 /* MetroGrooveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B23DF4081B53699B000918E9 /* MetroGrooveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DF4451B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGrooveUITests" */;
+			buildPhases = (
+				B23DF4051B53699B000918E9 /* Sources */,
+				B23DF4061B53699B000918E9 /* Frameworks */,
+				B23DF4071B53699B000918E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DF40B1B53699B000918E9 /* PBXTargetDependency */,
+			);
+			name = MetroGrooveUITests;
+			productName = MetroGrooveUITests;
+			productReference = B23DF4091B53699B000918E9 /* MetroGrooveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B23DF4111B53699B000918E9 /* MetroGroove WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DF43B1B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGroove WatchKit App" */;
+			buildPhases = (
+				C11CE932D03F42CE52174715 /* [CP] Check Pods Manifest.lock */,
+				B23DF4101B53699B000918E9 /* Resources */,
+				B23DF43A1B53699B000918E9 /* Embed App Extensions */,
+				383C551E789FCF055C890D8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DF4241B53699B000918E9 /* PBXTargetDependency */,
+			);
+			name = "MetroGroove WatchKit App";
+			productName = "MetroGroove WatchKit App";
+			productReference = B23DF4121B53699B000918E9 /* MetroGroove WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B23DF4201B53699B000918E9 /* MetroGroove WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DF4371B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGroove WatchKit Extension" */;
+			buildPhases = (
+				E221FFDA9E0187A84917F9BB /* [CP] Check Pods Manifest.lock */,
+				B23DF41D1B53699B000918E9 /* Sources */,
+				B23DF41E1B53699B000918E9 /* Frameworks */,
+				B23DF41F1B53699B000918E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MetroGroove WatchKit Extension";
+			productName = "MetroGroove WatchKit Extension";
+			productReference = B23DF4211B53699B000918E9 /* MetroGroove WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B23DF3E21B53699B000918E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Prospertin;
+				TargetAttributes = {
+					B23DF3E91B53699B000918E9 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 3T7RA73QCK;
+						LastSwiftMigration = 0810;
+					};
+					B23DF3FD1B53699B000918E9 = {
+						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Manual;
+						TestTargetID = B23DF3E91B53699B000918E9;
+					};
+					B23DF4081B53699B000918E9 = {
+						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
+						TestTargetID = B23DF3E91B53699B000918E9;
+					};
+					B23DF4111B53699B000918E9 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 3T7RA73QCK;
+						LastSwiftMigration = 0810;
+					};
+					B23DF4201B53699B000918E9 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 3T7RA73QCK;
+						LastSwiftMigration = 0810;
+					};
+				};
+			};
+			buildConfigurationList = B23DF3E51B53699B000918E9 /* Build configuration list for PBXProject "XGroove" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B23DF3E11B53699B000918E9;
+			productRefGroup = B23DF3EB1B53699B000918E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B23DF3E91B53699B000918E9 /* XGroove */,
+				B23DF3FD1B53699B000918E9 /* MetroGrooveTests */,
+				B23DF4081B53699B000918E9 /* MetroGrooveUITests */,
+				B23DF4111B53699B000918E9 /* MetroGroove WatchKit App */,
+				B23DF4201B53699B000918E9 /* MetroGroove WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B23DF3E81B53699B000918E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B216709A1B8775200000D3FB /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
+				B23DF3F81B53699B000918E9 /* LaunchScreen.storyboard in Resources */,
+				B24991E31C2E13BD00D6B304 /* rest.mp3 in Resources */,
+				B255B9C31C48700B008E7316 /* iPadMain.storyboard in Resources */,
+				B216709B1B8775200000D3FB /* gs_instruments.dls in Resources */,
+				B23DF3F51B53699B000918E9 /* Assets.xcassets in Resources */,
+				B23DF3F31B53699B000918E9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF3FC1B53699B000918E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF4071B53699B000918E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF4101B53699B000918E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DF41B1B53699B000918E9 /* Assets.xcassets in Resources */,
+				B23DF4191B53699B000918E9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF41F1B53699B000918E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DF4331B53699B000918E9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A9DCEEEE907F8AE14EAE72A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XGroove-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C11CE932D03F42CE52174715 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MetroGroove WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E221FFDA9E0187A84917F9BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MetroGroove WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B23DF3E61B53699B000918E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27AD0021CD6F552001E590C /* MainSplitViewController.swift in Sources */,
+				B2F745D61C6E32F90066C93A /* MidiPlayerViewController.swift in Sources */,
+				B25403131C15469800A9718B /* SaveTableViewController.swift in Sources */,
+				B2CC10EF1BA1DAEF008C90E6 /* PatternTableViewController.swift in Sources */,
+				B2BB5DF31E0C311D00EAD22C /* PercussionPageViewController.swift in Sources */,
+				B27C84201CDB8EEF00F3593C /* UIHelper.swift in Sources */,
+				B22491761C10012C0026DE95 /* PopupMenuViewController.swift in Sources */,
+				B20CECC71C94B6A1000A4268 /* DataModel.swift in Sources */,
+				B24312B61C7B6A22000D738F /* ProjectViewController.swift in Sources */,
+				B25403111C12955000A9718B /* ProjectFilesTableViewController.swift in Sources */,
+				B2B6C4991B71D6A4002E56B5 /* MidiSampler.swift in Sources */,
+				B255B9C51C489958008E7316 /* MidiFileManager.swift in Sources */,
+				B287681E1C82B3CE00E31DE0 /* PopupPatternTableViewController.swift in Sources */,
+				B24991F01C34B67200D6B304 /* PatternPageViewController.swift in Sources */,
+				B28768201C85EAC600E31DE0 /* PatternCollectionViewCell.swift in Sources */,
+				B28FE5811C2AF61A00276CF1 /* PatchManager.swift in Sources */,
+				B23DF3F01B53699B000918E9 /* MainViewController.swift in Sources */,
+				B27FCEAE1C5BC2AC005F2C10 /* PatternFilesTableViewController.swift in Sources */,
+				B24991E11C2DFF7E00D6B304 /* SettingManager.swift in Sources */,
+				B22F55941B69203A00E5343A /* MidiSequencer.swift in Sources */,
+				B23C75551B9D427700435F24 /* DrumCollectionViewCell.swift in Sources */,
+				B24641171E1358220029D1C6 /* PercussionCollectionViewController.swift in Sources */,
+				B24991DD1C2D129000D6B304 /* NoteView.swift in Sources */,
+				B23DF3EE1B53699B000918E9 /* AppDelegate.swift in Sources */,
+				B27AD0061CD79B65001E590C /* MidiNoteUserCallback.m in Sources */,
+				B28712F41C9702770074227D /* ToastFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF3FA1B53699B000918E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DF4031B53699B000918E9 /* MetroGrooveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF4051B53699B000918E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DF40E1B53699B000918E9 /* MetroGrooveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DF41D1B53699B000918E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DF42D1B53699B000918E9 /* NotificationController.swift in Sources */,
+				B2809D5E1B574CF300AB4187 /* GrooveController.swift in Sources */,
+				B23DF42B1B53699B000918E9 /* ExtensionDelegate.swift in Sources */,
+				B23DF4311B53699B000918E9 /* ComplicationController.swift in Sources */,
+				B23DF4291B53699B000918E9 /* InterfaceController.swift in Sources */,
+				B23DF42F1B53699B000918E9 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B23DF4001B53699B000918E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DF3E91B53699B000918E9 /* XGroove */;
+			targetProxy = B23DF3FF1B53699B000918E9 /* PBXContainerItemProxy */;
+		};
+		B23DF40B1B53699B000918E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DF3E91B53699B000918E9 /* XGroove */;
+			targetProxy = B23DF40A1B53699B000918E9 /* PBXContainerItemProxy */;
+		};
+		B23DF4151B53699B000918E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DF4111B53699B000918E9 /* MetroGroove WatchKit App */;
+			targetProxy = B23DF4141B53699B000918E9 /* PBXContainerItemProxy */;
+		};
+		B23DF4241B53699B000918E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DF4201B53699B000918E9 /* MetroGroove WatchKit Extension */;
+			targetProxy = B23DF4231B53699B000918E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B23DF3F11B53699B000918E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DF3F21B53699B000918E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B23DF3F61B53699B000918E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DF3F71B53699B000918E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B23DF4171B53699B000918E9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DF4181B53699B000918E9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		B255B9C11C48700B008E7316 /* iPadMain.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B255B9C21C48700B008E7316 /* Base */,
+			);
+			name = iPadMain.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B23DF4351B53699B000918E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B23DF4361B53699B000918E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B23DF4381B53699B000918E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 759D8F4DE8D80A0D4CA55E6F /* Pods-MetroGroove WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				INFOPLIST_FILE = "MetroGroove WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGroove.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B23DF4391B53699B000918E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF5759E75B1ABA051242C8F9 /* Pods-MetroGroove WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				INFOPLIST_FILE = "MetroGroove WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGroove.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B23DF43C1B53699B000918E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07135090588F869CCB53645D /* Pods-MetroGroove WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				IBSC_MODULE = MetroGroove_WatchKit_Extension;
+				INFOPLIST_FILE = "MetroGroove WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGroove.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B23DF43D1B53699B000918E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B711A9A1C17AA926DBA05E92 /* Pods-MetroGroove WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				IBSC_MODULE = MetroGroove_WatchKit_Extension;
+				INFOPLIST_FILE = "MetroGroove WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGroove.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B23DF4401B53699B000918E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1112594D20919EED919BC5 /* Pods-XGroove.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				INFOPLIST_FILE = MetroGroove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGroove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetroGroove/MetroGroove-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B23DF4411B53699B000918E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B140BD3747E805CA3A8A4E95 /* Pods-XGroove.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				INFOPLIST_FILE = MetroGroove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGroove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetroGroove/MetroGroove-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B23DF4431B53699B000918E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MetroGrooveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGrooveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XGroove.app/XGroove";
+			};
+			name = Debug;
+		};
+		B23DF4441B53699B000918E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MetroGrooveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGrooveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XGroove.app/XGroove";
+			};
+			name = Release;
+		};
+		B23DF4461B53699B000918E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MetroGrooveUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGrooveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MetroGroove;
+				USES_XCTRUNNER = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B23DF4471B53699B000918E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MetroGrooveUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prospertin.MetroGrooveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MetroGroove;
+				USES_XCTRUNNER = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B23DF3E51B53699B000918E9 /* Build configuration list for PBXProject "XGroove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DF4351B53699B000918E9 /* Debug */,
+				B23DF4361B53699B000918E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DF4371B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGroove WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DF4381B53699B000918E9 /* Debug */,
+				B23DF4391B53699B000918E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DF43B1B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGroove WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DF43C1B53699B000918E9 /* Debug */,
+				B23DF43D1B53699B000918E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DF43F1B53699B000918E9 /* Build configuration list for PBXNativeTarget "XGroove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DF4401B53699B000918E9 /* Debug */,
+				B23DF4411B53699B000918E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DF4421B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGrooveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DF4431B53699B000918E9 /* Debug */,
+				B23DF4441B53699B000918E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DF4451B53699B000918E9 /* Build configuration list for PBXNativeTarget "MetroGrooveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DF4461B53699B000918E9 /* Debug */,
+				B23DF4471B53699B000918E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B23DF3E21B53699B000918E9 /* Project object */;
+}
