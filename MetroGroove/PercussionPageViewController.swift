@@ -45,7 +45,7 @@ class PercussionPageViewController: UIPageViewController, UIPageViewControllerDa
         self.dataSource = self
         self.delegate = self
 
-        self.setViewControllers([pageArray.first!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.setViewControllers([pageArray.first!], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -111,7 +111,7 @@ class PercussionPageViewController: UIPageViewController, UIPageViewControllerDa
         }
         let destPage = viewControllerAtIndex(pageIndex)
         
-        let direction = pageIndex == 0 ? UIPageViewControllerNavigationDirection.forward : UIPageViewControllerNavigationDirection.reverse
+        let direction = pageIndex == 0 ? UIPageViewController.NavigationDirection.forward : UIPageViewController.NavigationDirection.reverse
         let visiblePages:Array<UIViewController> = [destPage!]
         setViewControllers(visiblePages, direction:direction, animated:animation, completion: nil);
     }

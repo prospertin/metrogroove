@@ -81,7 +81,7 @@ class PatternCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         self.addGestureRecognizer(press)
     }
     
-    func showNameEditor(_ recognizer: UILongPressGestureRecognizer){
+    @objc func showNameEditor(_ recognizer: UILongPressGestureRecognizer){
         sectionNameTextField.text = patternNameLabel.text
         sectionNameTextField.isHidden = false
         sectionNameTextField.becomeFirstResponder()
@@ -99,9 +99,9 @@ class PatternCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
             let alert = UIAlertController(
                 title: NSLocalizedString("Confirmation", comment: "Alert dialog"),
                 message: NSLocalizedString("Remove '\(patternNameLabel!.text!)' bars(\(barCount!.text!))?", comment: "Delete pattern confirmation"),
-                preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: UIAlertActionStyle.cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Confirm delete button"), style: UIAlertActionStyle.destructive, handler: { _ in
+                preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Confirm delete button"), style: UIAlertAction.Style.destructive, handler: { _ in
                 PatchManager.sharedManager.playPopSound()
                 self.patternSectionDelegate?.removeSection(self.index)
                 } ))
@@ -109,10 +109,10 @@ class PatternCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         }
     }
     
-    func highlightSection(_ recognizer: UITapGestureRecognizer) {
+    @objc func highlightSection(_ recognizer: UITapGestureRecognizer) {
         let duration = 0.5
         let delay = 0.0
-        let options = UIViewKeyframeAnimationOptions.calculationModePaced
+        let options = UIView.KeyframeAnimationOptions.calculationModePaced
         if animating {
             return
         }
@@ -147,7 +147,7 @@ class PatternCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     
     func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange, replacementString string:String ) -> Bool {
         if textField == barCount {
-            if range.location > 2 || (string.characters.count > 0 && Int(string) == nil) {// 3 characters 0-2 and numerical
+            if range.location > 2 || (string.count > 0 && Int(string) == nil) {// 3 characters 0-2 and numerical
                 return false;
             }
         }
@@ -163,7 +163,7 @@ class PatternCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         let numberToolbar: UIToolbar = UIToolbar()
         numberToolbar.barStyle = UIBarStyle.blackTranslucent
         
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target:self, action: #selector(PatternCollectionViewCell.dismissKeyboard))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target:self, action: #selector(PatternCollectionViewCell.dismissKeyboard))
         done.tintColor = UIColor.white
         numberToolbar.items = [done]
         
@@ -172,12 +172,12 @@ class PatternCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         
     }
     
-    func dismissKeyboard(_ textField: UITextField) {
+    @objc func dismissKeyboard(_ textField: UITextField) {
         textField.resignFirstResponder()
         if textField == barCount {
             patternSectionDelegate?.updateBarCount(Int(barCount.text!) ?? 1, atIndex:index)
         } else  {
-            if sectionNameTextField.text != nil && sectionNameTextField.text?.characters.count > 0 {
+            if sectionNameTextField.text != nil && sectionNameTextField.text?.count > 0 {
                 patternNameLabel.text = sectionNameTextField.text
             }
             sectionNameTextField.isHidden = true

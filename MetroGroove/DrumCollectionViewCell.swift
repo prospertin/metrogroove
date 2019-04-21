@@ -44,7 +44,7 @@ class DrumCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate 
         
         UIView.transition(with: patchSettingView,
             duration:1,
-            options:UIViewAnimationOptions.transitionFlipFromRight,
+            options:UIView.AnimationOptions.transitionFlipFromRight,
             animations:{
                 if (!self.editMode) {
                     self.padButton.isHidden = true
@@ -71,10 +71,10 @@ class DrumCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate 
        // self.addGestureRecognizer(press)
     }
     
-    func flipView(_ longPress: UILongPressGestureRecognizer){
+    @objc func flipView(_ longPress: UILongPressGestureRecognizer){
         guard longPress.state == .began else { return }
         // set a transition style
-        let transitionOptions = UIViewAnimationOptions.transitionFlipFromRight
+        let transitionOptions = UIView.AnimationOptions.transitionFlipFromRight
         var views : (frontView: UIView, backView: UIView)
 
         if !self.editMode {
@@ -122,16 +122,16 @@ class DrumCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate 
         
         let edgeLength = self.frame.width - CGFloat(self.margin)
         
-        let constX:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0);
+        let constX:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0);
         self.addConstraint(constX);
 
-        let constY:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0);
+        let constY:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0);
         self.addConstraint(constY);
 
-        let constW:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: edgeLength);
+        let constW:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: edgeLength);
         self.addConstraint(constW);
 
-        let constH:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1, constant: edgeLength);
+        let constH:NSLayoutConstraint = NSLayoutConstraint(item: theView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: edgeLength);
         self.addConstraint(constH);
     }
     

@@ -72,7 +72,7 @@ class MidiPlayerViewController: UIViewController, UIPickerViewDataSource, UIPick
         activityViewController.setValue("\(NSLocalizedString("Sharing", comment: "")) \(displayName)", forKey: "subject")
         activityViewController.completionWithItemsHandler = {(activityType, completed, returnedItems, activityError) in
             if completed {
-                print("Exported with \(activityType)")
+                print("Exported with \(String(describing: activityType))")
             } else if activityType == nil {
                 print("User dismiss without making a selection")
             } else {
@@ -87,7 +87,7 @@ class MidiPlayerViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBAction func onClose( _ sender: AnyObject) {
         UIView.transition(with: view.superview!,
                                   duration:1.0,
-                                  options:UIViewAnimationOptions.transitionCrossDissolve,
+                                  options:UIView.AnimationOptions.transitionCrossDissolve,
                                   animations: {
                                     self.view.removeFromSuperview()
             }, completion: { _ in
@@ -124,7 +124,7 @@ class MidiPlayerViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
-    func forwardSequence(_ timer:Timer){
+    @objc func forwardSequence(_ timer:Timer){
         if MidiPlayerControlEnum(rawValue:segmentControl.selectedSegmentIndex) == .forward {
             if sequencer!.forward() == false {
                 timer.invalidate()
@@ -135,7 +135,7 @@ class MidiPlayerViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
-    func rewindSequence(_ timer:Timer){
+    @objc func rewindSequence(_ timer:Timer){
         if MidiPlayerControlEnum(rawValue:segmentControl.selectedSegmentIndex) == .rewind {
             if sequencer!.rewind() == false {
                 timer.invalidate()
@@ -225,7 +225,7 @@ class MidiPlayerViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     //MARK: notifications
-    dynamic func setCounter(_ notification: Notification){
+    @objc dynamic func setCounter(_ notification: Notification){
         DispatchQueue.main.async(execute: {
             let count = notification.object as! String
             if Int(count) < self.counterPicker.numberOfRows(inComponent: 0) {

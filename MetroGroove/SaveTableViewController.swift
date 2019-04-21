@@ -52,7 +52,7 @@ class SaveTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     // Override to support editing the table view.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             let fname = MidiFileManager.patternsSharedInstance.fileList!.remove(at: indexPath.row)

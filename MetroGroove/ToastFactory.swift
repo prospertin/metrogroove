@@ -64,7 +64,7 @@ class ToastFactory: NSObject {
         });
     }
     
-    dynamic static func toastTimerFinish(_ timer: Timer){
+    @objc dynamic static func toastTimerFinish(_ timer: Timer){
         ToastFactory.dismissToast(timer.userInfo as! UIView);
         timer.invalidate();
     }
@@ -122,11 +122,22 @@ class ToastFactory: NSObject {
     static fileprivate func sizeForString(_ string: NSString, font: UIFont, constrainedToSize: CGSize, lineBreakMode: NSLineBreakMode) -> CGSize {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = lineBreakMode;
-        let attributes = [NSFontAttributeName : font, NSParagraphStyleAttributeName : paragraphStyle];
-        let boundingRect = string.boundingRect(with: constrainedToSize, options:NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attributes, context:nil);
+        let attributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.font) : font, convertFromNSAttributedStringKey(NSAttributedString.Key.paragraphStyle) : paragraphStyle];
+        let boundingRect = string.boundingRect(with: constrainedToSize, options:NSStringDrawingOptions.usesLineFragmentOrigin, attributes:convertToOptionalNSAttributedStringKeyDictionary(attributes), context:nil);
         let width:Float = Float(boundingRect.size.width)
         let height:Float = Float(boundingRect.size.height)
         return CGSize(width: CGFloat(ceilf(width)), height: CGFloat(ceilf(height)));
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

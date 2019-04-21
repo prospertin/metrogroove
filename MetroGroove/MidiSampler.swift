@@ -66,7 +66,7 @@ class MIDISampler : NSObject {
     func loadMIDIFile() {
         // Load a SoundFont or DLS file.
         self.soundbank = Bundle.main.url(forResource: "GeneralUser GS MuseScore v1.442", withExtension: "sf2")
-        print("soundbank \(soundbank)")
+        print("soundbank \(String(describing: soundbank))")
         
         // a standard MIDI file.
         let contents:URL = Bundle.main.url(forResource: "ntbldmtn", withExtension: "mid")!

@@ -100,7 +100,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MainViewController.panPatternTable(_:)))
         self.cursorView.addGestureRecognizer(panGestureRecognizer);
         if tripletSwitch != nil {
-            tripletSwitch.addTarget(self, action:#selector(MainViewController.setTripletState(_:)), for:UIControlEvents.valueChanged);
+            tripletSwitch.addTarget(self, action:#selector(MainViewController.setTripletState(_:)), for:UIControl.Event.valueChanged);
         }
         
         NotificationCenter.default.addObserver(
@@ -117,7 +117,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(MainViewController.orientationChanged(_:)),
-            name: NSNotification.Name.UIDeviceOrientationDidChange,
+            name: UIDevice.orientationDidChangeNotification,
             object: UIDevice.current)
         
         if currentFileName == nil {
@@ -131,19 +131,19 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
     
     func setWatchConnectivity() {
         if (WCSession.isSupported()) {
-            watchSession = WCSession.default()
+            watchSession = WCSession.default
             watchSession!.delegate = self
             watchSession!.activate()
         }
     }
     
-    dynamic func importPattern(_ notification: Notification){
+    @objc dynamic func importPattern(_ notification: Notification){
         let fname = notification.object as! String
         if let pattern = MidiSequencer.sharedInstance.patternFileToNoteTable(fname) {
             // BUG!, use signature from file
             let tempoSignature = MidiSequencer.sharedInstance.getTempoAndSignature()
            // SettingManager.sharedManager.barCount = 1 // By default for now
-            self.patternSizeButton.setTitle("1", for: UIControlState())
+            self.patternSizeButton.setTitle("1", for: UIControl.State())
             self.currentFileName = fname
             self.title = currentFileName
             self.patternPageViewController.instrumentList = pattern
@@ -153,8 +153,8 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
             self.settingManager.upperTimeSignature = tempoSignature.timeUpper
             self.settingManager.lowerTimeSignature = tempoSignature.timeLower
             self.settingManager.barCount = min(tempoSignature.barCount, 4)
-            self.patternSizeButton.setTitle("\(tempoSignature.barCount)", for: UIControlState())
-            self.timeSignatureButton.setTitle("\(tempoSignature.timeUpper)/\(tempoSignature.timeLower)", for: UIControlState())
+            self.patternSizeButton.setTitle("\(tempoSignature.barCount)", for: UIControl.State())
+            self.timeSignatureButton.setTitle("\(tempoSignature.timeUpper)/\(tempoSignature.timeLower)", for: UIControl.State())
             setCursorWidth()
             self.patternPageViewController.reloadData()
             self.patternPageViewController.hasChanges = false
@@ -163,7 +163,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         }
     }
     
-    dynamic func showPageNumber(_ notification: Notification){
+    @objc dynamic func showPageNumber(_ notification: Notification){
         let pageNumber = notification.object as! String
         self.barNumber.text = pageNumber
         
@@ -176,7 +176,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         
     }
     
-    dynamic func setTripletState(_ sender: UISwitch){
+    @objc dynamic func setTripletState(_ sender: UISwitch){
         print("Triplet is \(sender.isOn)")
         SettingManager.sharedManager.triplet = sender.isOn
         setDuration()
@@ -309,10 +309,10 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "padsSegue" {
-            self.percussionPageViewController = segue.destination as! PercussionPageViewController
+            self.percussionPageViewController = segue.destination as? PercussionPageViewController
             (segue.destination as! PercussionPageViewController).mainViewController = self
         } else if segue.identifier == "patternsSegue" {
-            self.patternPageViewController = segue.destination as! PatternPageViewController
+            self.patternPageViewController = segue.destination as? PatternPageViewController
 //            self.patternTableViewController.noteSettings = self.noteSettings
         } else if segue.destination.isKind(of: PopupMenuViewController.self){
         //segue.identifier == "menuPopoverSegue" || segue.identifier == "newPopoverSegue" {
@@ -335,7 +335,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
     func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange, replacementString string:String ) -> Bool {
 
         if textField == self.tempoTextField {// 3 characters 0-2
-            if range.location > 2 || (string.characters.count > 0 && Int(string) == nil) {
+            if range.location > 2 || (string.count > 0 && Int(string) == nil) {
                 return false;
             }
         }
@@ -346,7 +346,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         let numberToolbar: UIToolbar = UIToolbar()
         numberToolbar.barStyle = UIBarStyle.blackTranslucent
         
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target:self, action: #selector(MainViewController.dismissTempoKeyboard))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target:self, action: #selector(MainViewController.dismissTempoKeyboard))
         done.tintColor = UIColor.white
         numberToolbar.items = [done]
         
@@ -354,7 +354,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         self.tempoTextField.inputAccessoryView = numberToolbar //do it for every relevant textfield if there are more than one
     }
     
-    func dismissTempoKeyboard() {
+    @objc func dismissTempoKeyboard() {
         if self.tempoTextField.text?.lengthOfBytes(using: String.Encoding.ascii) > 0 {
             self.settingManager.tempo = Double(self.tempoTextField.text!)!
         }
@@ -404,7 +404,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
     
     // MARK: Gesture Callbacks
     
-    func panPatternTable(_ pan: UIPanGestureRecognizer) {
+    @objc func panPatternTable(_ pan: UIPanGestureRecognizer) {
         var location = pan.location(in: view)
         let tableFrame = self.patternPageViewController.getCurrentTableFrame()
         
@@ -506,32 +506,32 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
             case 0:
                 self.settingManager.upperTimeSignature = 2
                 self.settingManager.lowerTimeSignature = 4
-                self.timeSignatureButton.setTitle("2/4", for: UIControlState())
+                self.timeSignatureButton.setTitle("2/4", for: UIControl.State())
                 break
             case 1:
                 self.settingManager.upperTimeSignature = 3
                 self.settingManager.lowerTimeSignature = 4
-                self.timeSignatureButton.setTitle("3/4", for: UIControlState())
+                self.timeSignatureButton.setTitle("3/4", for: UIControl.State())
                 break
             case 2:
                 self.settingManager.upperTimeSignature = 4
                 self.settingManager.lowerTimeSignature = 4
-                self.timeSignatureButton.setTitle("4/4", for: UIControlState())
+                self.timeSignatureButton.setTitle("4/4", for: UIControl.State())
                 break
             case 3:
                 self.settingManager.upperTimeSignature = 5
                 self.settingManager.lowerTimeSignature = 4
-                self.timeSignatureButton.setTitle("5/4", for: UIControlState())
+                self.timeSignatureButton.setTitle("5/4", for: UIControl.State())
                 break
             case 4:
                 self.settingManager.upperTimeSignature = 6
                 self.settingManager.lowerTimeSignature = 4
-                self.timeSignatureButton.setTitle("6/4", for: UIControlState())
+                self.timeSignatureButton.setTitle("6/4", for: UIControl.State())
                 break
             case 5:
                 self.settingManager.upperTimeSignature = 6
                 self.settingManager.lowerTimeSignature = 8
-                self.timeSignatureButton.setTitle("6/8", for: UIControlState())
+                self.timeSignatureButton.setTitle("6/8", for: UIControl.State())
                 break
             default:
                 break
@@ -543,15 +543,15 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
             switch index {
             case 0:
                 self.settingManager.barCount = 1
-                self.patternSizeButton.setTitle("1", for: UIControlState())
+                self.patternSizeButton.setTitle("1", for: UIControl.State())
                 break
             case 1:
                 self.settingManager.barCount = 2
-                self.patternSizeButton.setTitle("2", for: UIControlState())
+                self.patternSizeButton.setTitle("2", for: UIControl.State())
                 break
             case 2:
                 self.settingManager.barCount = 4
-                self.patternSizeButton.setTitle("4", for: UIControlState())
+                self.patternSizeButton.setTitle("4", for: UIControl.State())
                 break
             default:
                 break
@@ -613,7 +613,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
         self.iPadPatternName?.resignFirstResponder()
     }
     
-    func orientationChanged(_ note: Notification) {
+    @objc func orientationChanged(_ note: Notification) {
         setCursorWidth()
     }
     

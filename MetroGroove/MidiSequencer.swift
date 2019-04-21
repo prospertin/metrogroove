@@ -930,8 +930,8 @@ class MyMetaEvent {
 
         size = MemoryLayout<MIDIMetaEvent>.size // size = 12 = 4 UInt8 + 1 Uint32 + 4 Bytes of data
         mem = UnsafeMutableRawPointer.allocate(
-            bytes: size * MemoryLayout<UInt8>.stride,
-            alignedTo: MemoryLayout<MIDIMetaEvent>.alignment)
+            byteCount: size * MemoryLayout<UInt8>.stride,
+            alignment: MemoryLayout<MIDIMetaEvent>.alignment)
         
         let ptr = mem.bindMemory(to: MIDIMetaEvent.self, capacity: 1)
         let eventData = (mem + 8).bindMemory(to: UInt8.self, capacity: data.count)
@@ -977,8 +977,7 @@ class MyMetaEvent {
     
     deinit {
         // Release the allocated memory:
-        mem.deallocate(bytes: size * MemoryLayout<UInt8>.stride,
-                       alignedTo: MemoryLayout<MIDIMetaEvent>.alignment)
+        mem.deallocate()
         //metaEventPtr.deallocate(capacity: 1)
     }
 }

@@ -35,7 +35,7 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(PercussionCollectionViewController.orientationChanged(_:)),
-            name: NSNotification.Name.UIDeviceOrientationDidChange,
+            name: UIDevice.orientationDidChangeNotification,
             object: UIDevice.current)
         
     }
@@ -58,7 +58,7 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
         cell.initSettingButton()
         
         if labels != nil && labels!.count > indexPath.row {
-            cell.padButton.setTitle(labels![indexPath.row], for: UIControlState())
+            cell.padButton.setTitle(labels![indexPath.row], for: UIControl.State())
         }
         return cell
     }
@@ -75,7 +75,7 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if UIDevice.current.userInterfaceIdiom == .pad {
-            if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+            if(UIDevice.current.orientation.isLandscape) {
                 return CGSize(width: 208, height: 126.2)
             } else { //if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
                 return CGSize(width: 229, height: 202)
@@ -87,7 +87,7 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
         }
     }
     
-    func orientationChanged(_ note: Notification) {
+    @objc func orientationChanged(_ note: Notification) {
         
         let newOrientation = UIApplication.shared.statusBarOrientation
         if newOrientation != orientation {

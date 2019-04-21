@@ -32,7 +32,7 @@ class NoteView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func removeNote(_ recognizer: UITapGestureRecognizer) {
+    @objc func removeNote(_ recognizer: UITapGestureRecognizer) {
         self.removeFromSuperview()
         delegate?.removeNote(self.note, atLine:line)
     }

@@ -56,7 +56,7 @@ class PatternPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.dataSource = self
         self.delegate = self
         
-        self.setViewControllers([pagesArray.first!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.setViewControllers([pagesArray.first!], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         self.cursorStartX = (getCurrentPageController()?.startX)!
@@ -196,7 +196,7 @@ class PatternPageViewController: UIPageViewController, UIPageViewControllerDataS
         if self.absCursorBeatPosition >= SettingManager.sharedManager.totalPatternBeats() {
             self.absCursorBeatPosition = 0.0;
             if pagesArray.count > 1 {
-                slideToPage(0, animation: true, completion: { _ in
+                slideToPage(0, animation: true, completion: {
                     block!(self.absCursorBeatPosition)
                 })
                 cursorMoved = true
@@ -205,7 +205,7 @@ class PatternPageViewController: UIPageViewController, UIPageViewControllerDataS
             if let currentPage = getCurrentPageController() {
                 let beatPerPage = SettingManager.sharedManager.beatCountPerBar()
                 if self.absCursorBeatPosition >= Float(currentPage.pageIndex + 1 ) * beatPerPage {
-                    self.slideToPage(currentPage.pageIndex + 1, animation: true, completion:  { _ in
+                    self.slideToPage(currentPage.pageIndex + 1, animation: true, completion:  {
                         block!(self.absCursorBeatPosition)
                     })
                     cursorMoved = true
@@ -308,13 +308,13 @@ class PatternPageViewController: UIPageViewController, UIPageViewControllerDataS
         }
     }
     
-    func slideToPage(_ pageIndex:Int, animation:Bool, completion: ((Void) -> Void)?) {
+    func slideToPage(_ pageIndex:Int, animation:Bool, completion: (() -> Void)?) {
         if pageIndex >=  self.pagesArray.count || pageIndex < 0 {
             return
         }
         let destPage = viewControllerAtIndex(pageIndex)
         //let viewControllers = [destPage];
-        let direction = pageIndex > getCurrentPageController()?.pageIndex ? UIPageViewControllerNavigationDirection.forward : UIPageViewControllerNavigationDirection.reverse
+        let direction = pageIndex > getCurrentPageController()?.pageIndex ? UIPageViewController.NavigationDirection.forward : UIPageViewController.NavigationDirection.reverse
         let visiblePages:Array<UIViewController> = [destPage!]
         setViewControllers(visiblePages, direction:direction, animated:animation, completion: { _ in
             if let block = completion{
@@ -335,7 +335,7 @@ class PatternPageViewController: UIPageViewController, UIPageViewControllerDataS
         timer = nil
     }
     
-    func updateBeat() {
+    @objc func updateBeat() {
         let interval = timer.userInfo as! TimeInterval
         absCursorBeatPosition = (absCursorBeatPosition + Float(interval)).truncatingRemainder(dividingBy: (Float(SettingManager.sharedManager.upperTimeSignature) * Float(SettingManager.sharedManager.barCount)))
     }

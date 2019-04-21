@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegateFlowLayout, PopoverMenuDelegate, PatternSectionDelegate {
+class ProjectViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout, PopoverMenuDelegate, PatternSectionDelegate {
 
     let reusedIdentifier = "patternCell"
     let patternCache = [String:[Array<Note>]]()
@@ -70,24 +70,6 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
     @IBAction func onSaveProject(_ sender: AnyObject) {
         saveProject()
     }
-//    // MARK: Player control
-//    @IBAction func onPlayerSegmentControlChange(sender: AnyObject) {
-//        let segmentControl:UISegmentedControl = sender as! UISegmentedControl
-//        let index:PlayerControlEnum = PlayerControlEnum(rawValue: segmentControl.selectedSegmentIndex)!
-//        
-//        switch(index) {
-//        case .Pause:
-//            sequencer.musicPlayerStop()
-//            break
-//        case .Play:
-//            createSequenceFromProject()
-//            sequencer.musicPlayerStartPlayingCurrentSequence(findBeatPositionAtSection(cursorPosition))
-//            //playerSegmentedControl.selectedSegmentIndex = PlayerControlEnum.Deselect.rawValue
-//            break
-//        default:
-//            sequencer.musicPlayerStop()
-//        }
-//    }
     
     func findBeatPositionAtSection(_ index: Int) -> Float{
         var beatPosition: Float = 0
@@ -109,11 +91,8 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         tempoTextField.delegate = self
-    //    barNumberTextField.delegate = self
         projectNameTextField.delegate = self
         
-//        projectNameTextField.addTarget(self, action: #selector(ProjectViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
-//        
         if UIDevice.current.userInterfaceIdiom == .phone {
             setupKeyBoardForTempoTextField()
         }
@@ -128,7 +107,7 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(ProjectViewController.orientationChanged(_:)),
-            name: NSNotification.Name.UIDeviceOrientationDidChange,
+            name: UIDevice.orientationDidChangeNotification,
             object: UIDevice.current)
         
         tap.numberOfTapsRequired = 1
@@ -137,7 +116,7 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
 
     }
 
-    dynamic func unfocusSection(_ recognizer: UITapGestureRecognizer) {
+    @objc dynamic func unfocusSection(_ recognizer: UITapGestureRecognizer) {
         if cursorPosition < 0 {
             return
         }
@@ -173,7 +152,7 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
     func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange, replacementString string:String ) -> Bool {
     
         if textField == tempoTextField {
-            if range.location > 2 || (string.characters.count > 0 && Int(string) == nil) {// 3 characters 0-2 and numerical
+            if range.location > 2 || (string.count > 0 && Int(string) == nil) {// 3 characters 0-2 and numerical
                 return false;
             }
         }
@@ -185,7 +164,7 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
         let numberToolbar: UIToolbar = UIToolbar()
         numberToolbar.barStyle = UIBarStyle.blackTranslucent
         
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target:self, action: #selector(ProjectViewController.dismissTempoKeyboard))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target:self, action: #selector(ProjectViewController.dismissTempoKeyboard))
         done.tintColor = UIColor.white
         numberToolbar.items = [done]
         
@@ -194,7 +173,7 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
         
     }
     
-    func dismissTempoKeyboard() {
+    @objc func dismissTempoKeyboard() {
         self.tempoTextField.resignFirstResponder()
     }
     
@@ -229,7 +208,7 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
     
     // MARK: UICollectionViewDataSource
     
-    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
@@ -241,8 +220,8 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
         let w = projectCollectionView.frame.width / 4
         return CGSize(width: w, height: 30.0)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+   
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusedIdentifier, for: indexPath) as! PatternCollectionViewCell
         cell.patternNameLabel.text = sections[indexPath.row].patternName
         cell.barCount.text = String(sections[indexPath.row].count)
@@ -256,11 +235,11 @@ class ProjectViewController: UIViewController, UITextFieldDelegate, UICollection
         return cell
     }
     
-    func orientationChanged(_ note: Notification) {
+    @objc func orientationChanged(_ note: Notification) {
         projectCollectionView.reloadData()
     }
 
-    dynamic func importProject(_ notification: Notification) {
+    @objc dynamic func importProject(_ notification: Notification) {
         
         let fname = notification.object as! String
         

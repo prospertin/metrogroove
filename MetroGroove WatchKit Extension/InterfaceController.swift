@@ -59,7 +59,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             setInfoLabels(timeSignature)
         }
         if (WCSession.isSupported()) {
-            session = WCSession.default()
+            session = WCSession.default
             session.delegate = self
             session.activate()
         }
@@ -71,7 +71,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func setInfoLabels(_ ts : TimeSignature) {
-        timeSigLabel.setText("\(ts.upperNumber)/\(ts.lowerNumber)")
+        timeSigLabel.setText("\(ts.upperNumber ?? 4)/\(ts.lowerNumber ?? 4)")
         bpmLabel.setText("\(Int(ts.beatsPerMinute)) bpm")
     }
     
@@ -97,7 +97,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         setInfoLabels(timeSignature)
        // sendMessageToParent("stop")
     }
-    func updateBeat() {
+    @objc func updateBeat() {
         let ts = timer.userInfo as! TimeSignature
         if (currentBeatFraction < 0){
             if (!ts.shuffle || currentBeatFraction == -2){

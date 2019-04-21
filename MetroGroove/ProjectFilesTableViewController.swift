@@ -31,11 +31,11 @@ class ProjectFilesTableViewController: UIViewController, UITableViewDelegate, UI
             return;
         }
         else {
-            if fname.characters.count > 5 { //?.mid
+            if fname.count > 5 { //?.mid
                 //check if suffix is .mid
                 let fname = self.searchBar.text!
                 if let index = fname.range(of: ".", options: .backwards)?.lowerBound {
-                    let ext = fname.substring(from: index)
+                    let ext = String(fname[index...])
                     if ext == ".mid" {
                         let fileUrl = MidiFileManager.projectsSharedInstance.getUrlForFile(fname)
                         if midiPlayerViewController == nil {
@@ -123,7 +123,7 @@ class ProjectFilesTableViewController: UIViewController, UITableViewDelegate, UI
     }
     
     // Override to support editing the table view.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             let fname = MidiFileManager.projectsSharedInstance.fileList!.remove(at: indexPath.row)
@@ -179,16 +179,16 @@ class ProjectFilesTableViewController: UIViewController, UITableViewDelegate, UI
     
     func showMessage(_ message:String, withTitle title:String?) {
         let alertController = UIAlertController(title: title, message:
-            message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "File alert"), style: UIAlertActionStyle.default,handler: nil))
+            message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "File alert"), style: UIAlertAction.Style.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
 
-    dynamic func updateFileListTable(_ notification: Notification){
+    @objc dynamic func updateFileListTable(_ notification: Notification){
         self.tableView.reloadData()
     }
     
-    dynamic func launchMidiPlayer(_ notification: Notification) {
+    @objc dynamic func launchMidiPlayer(_ notification: Notification) {
         let projSeq = notification.object as! ProjectSequencer
         guard let sequencer = projSeq.sequencer else {
             return
@@ -222,7 +222,7 @@ class ProjectFilesTableViewController: UIViewController, UITableViewDelegate, UI
         midiPlayerViewController!.view.frame = CGRect(x:0, y:0, width:view.frame.size.width, height:view.frame.size.height);
         UIView.transition(with: view,
             duration:1.0,
-            options:UIViewAnimationOptions.transitionCrossDissolve,
+            options:UIView.AnimationOptions.transitionCrossDissolve,
             animations: {
                 self.initMidiPlayerController()
                 self.view.addSubview(self.midiPlayerViewController!.view)

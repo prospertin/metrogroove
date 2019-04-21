@@ -92,8 +92,8 @@ class MidiFileManager: NSObject {
                 let type = attribs!["NSFileType"] as! FileAttributeType
                 if type != FileAttributeType.typeDirectory && fname.hasSuffix(fileExtension){
                     // remove extension
-                    let extIndex = fname.characters.index(fname.endIndex, offsetBy: -fileExtension.characters.count)
-                    fileList?.append(fname.substring(to: extIndex))
+                    let extIndex = fname.index(fname.endIndex, offsetBy: -fileExtension.count)
+                    fileList?.append(String(fname[..<extIndex]))
                 }
             }
             return fileList!
@@ -144,7 +144,7 @@ class MidiFileManager: NSObject {
     }
     
     func checkFile(_ fname: String?, checkDuplicate:Bool) -> String? {
-        if fname != nil && fname?.characters.count > 0  {
+        if fname != nil && fname?.count > 0  {
             
             if isValidFileName(fname!) == false {
                 return NSLocalizedString("Invalid file name. Please use alpha-numerics, spaces, '_' and '-'.", comment: "invalid file name")
@@ -169,14 +169,14 @@ class MidiFileManager: NSObject {
     func isValidFileName(_ name: String) -> Bool {
         let regex = try! NSRegularExpression(pattern: "^[A-Z0-9 _-]+$", options: [.caseInsensitive])
         
-        return regex.firstMatch(in: name, options:[], range: NSMakeRange(0, name.characters.count)) != nil
+        return regex.firstMatch(in: name, options:[], range: NSMakeRange(0, name.count)) != nil
     }
     
     func showMessage(_ message:String, withTitle title:String?, onViewController vc:UIViewController) {
         DispatchQueue.main.async(execute: {
             let alertController = UIAlertController(title: title, message:
-                message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "File alert"), style: UIAlertActionStyle.default,handler: nil))
+                message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "File alert"), style: UIAlertAction.Style.default,handler: nil))
             vc.view.window!.rootViewController!.present(alertController, animated: true, completion: nil)
         })
     }

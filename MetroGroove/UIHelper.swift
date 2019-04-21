@@ -11,17 +11,17 @@ class UIHelper: NSObject {
 
     static func showAlertMessage(_ message:String, withTitle title:String?, onController parent:UIViewController) {
         let alertController = UIAlertController(title: title, message:
-            message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "File alert"), style: UIAlertActionStyle.default,handler: nil))
+            message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "File alert"), style: UIAlertAction.Style.default,handler: nil))
         parent.present(alertController, animated: true, completion: nil)
     }
     
     static func showAlertMessageWithOptions(_ message:String, withTitle title:String?, onController parent:UIViewController, okAction: @escaping ((UIAlertAction) -> Void)) {
         let alertController = UIAlertController(title: title, message:
-            message, preferredStyle: UIAlertControllerStyle.alert)
+            message, preferredStyle: UIAlertController.Style.alert)
         
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: UIAlertActionStyle.cancel, handler: nil))
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Confirm"), style: UIAlertActionStyle.destructive, handler: okAction ))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: UIAlertAction.Style.cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Confirm"), style: UIAlertAction.Style.destructive, handler: okAction ))
         parent.present(alertController, animated: true, completion: nil)
     }
     

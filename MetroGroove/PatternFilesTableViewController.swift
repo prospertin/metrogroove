@@ -103,7 +103,7 @@ class PatternFilesTableViewController: UIViewController, UITableViewDelegate, UI
     }
     
     // Override to support editing the table view.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             let fname = MidiFileManager.patternsSharedInstance.fileList!.remove(at: indexPath.row)
@@ -154,7 +154,7 @@ class PatternFilesTableViewController: UIViewController, UITableViewDelegate, UI
         UIHelper.showAlertMessage(message, withTitle:title, onController:self)
     }
     
-    dynamic func updateFileListTable(_ notification: Notification){
+    @objc dynamic func updateFileListTable(_ notification: Notification){
         self.tableView.reloadData()
     }
 }
