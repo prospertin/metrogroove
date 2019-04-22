@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class PercussionPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var pageArray:Array<PercussionCollectionViewController> = []
     var mainViewController:MainViewController!
+    var currentPage = MutableProperty(0)
     
     let drumSetLabels = [
         "Opn Hh",
@@ -55,7 +57,6 @@ class PercussionPageViewController: UIPageViewController, UIPageViewControllerDa
     }
     
     private func initializeDrumSetPages() {
-        
         let storyboard = UIStoryboard(name: "iPadMain", bundle: nil)
         
         let vc1 = storyboard.instantiateViewController(withIdentifier: "percussionCollectionViewController") as! PercussionCollectionViewController
@@ -82,18 +83,21 @@ class PercussionPageViewController: UIPageViewController, UIPageViewControllerDa
                             didFinishAnimating finished: Bool,
                             previousViewControllers: [UIViewController],
                             transitionCompleted completed: Bool) {
+        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let index = (viewController as! PercussionCollectionViewController).pageIndex
-        return viewControllerAtIndex(index - 1)
+        currentPage.value = index - 1
+        return viewControllerAtIndex(currentPage.value)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let index = (viewController as! PercussionCollectionViewController).pageIndex
-        return viewControllerAtIndex(index + 1)
+        currentPage.value = index + 1
+        return viewControllerAtIndex(currentPage.value)
     }
     
     func viewControllerAtIndex(_ index: Int) -> PercussionCollectionViewController! {
@@ -111,9 +115,10 @@ class PercussionPageViewController: UIPageViewController, UIPageViewControllerDa
         }
         let destPage = viewControllerAtIndex(pageIndex)
         
-        let direction = pageIndex == 0 ? UIPageViewController.NavigationDirection.forward : UIPageViewController.NavigationDirection.reverse
+        let direction = pageIndex > currentPage.value ? UIPageViewController.NavigationDirection.forward : UIPageViewController.NavigationDirection.reverse
         let visiblePages:Array<UIViewController> = [destPage!]
         setViewControllers(visiblePages, direction:direction, animated:animation, completion: nil);
+        currentPage.value = pageIndex
     }
 
     /*
