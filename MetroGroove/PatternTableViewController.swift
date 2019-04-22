@@ -117,7 +117,7 @@ class PatternTableViewController: UITableViewController, NoteViewDelegate {
                // x = startX + CGFloat(note.beatPosition % Float(SettingManager.sharedManager.upperTimeSignature) * noteWidthUnit)
                 x = startX + CGFloat(note.beatPosition.truncatingRemainder(dividingBy: SettingManager.sharedManager.beatCountPerBar()) * noteWidthUnit)
                 let frame = CGRect(x: x, y: 0.0, width: width, height: rowHeight*3/2)// tableView.bounds.height/CGFloat(self.pageViewController.instrumentList.count))
-                let noteView = NoteView(frame: frame, forNote: note, atLine: indexPath.row - 1)
+                let noteView = NoteView(frame: frame, forNote: note, atLine: indexPath.row)
                 noteView.delegate = self
                 noteView.backgroundColor = note.velocity == 0 ? UIColor.white : UIColor.red
 //                noteView.addGestureRecognizer(UISwipeGestureRecognizer(target: noteView, action: "swipeNote:"))
