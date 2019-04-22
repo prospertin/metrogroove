@@ -48,7 +48,6 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DrumCollectionViewCell
         cell.lineNumber = indexPath.row + numberOfPads * pageIndex
         cell.noteValue = PatchManager.sharedManager.getPatchValueForTrackIndex(cell.lineNumber)
@@ -75,7 +74,7 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if UIDevice.current.userInterfaceIdiom == .pad {
-            if(UIDevice.current.orientation.isLandscape) {
+            if(UIApplication.shared.statusBarOrientation.isLandscape ) {
                 return CGSize(width: 208, height: 126.2)
             } else { //if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
                 return CGSize(width: 229, height: 202)
@@ -88,7 +87,6 @@ class PercussionCollectionViewController:  UICollectionViewController, UICollect
     }
     
     @objc func orientationChanged(_ note: Notification) {
-        
         let newOrientation = UIApplication.shared.statusBarOrientation
         if newOrientation != orientation {
             orientation = newOrientation

@@ -724,15 +724,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fnK-1U-f2g">
-                                <rect key="frame" x="0.0" y="717" width="703.5" height="51"/>
+                                <rect key="frame" x="0.0" y="717.5" width="703.5" height="50.5"/>
                                 <items>
-                                    <barButtonItem title="&lt;" style="done" id="Url-kg-Qck">
+                                    <barButtonItem enabled="NO" title="&lt;" style="done" id="Url-kg-Qck">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="onPageLeft:" destination="rcv-h7-TBc" id="WJJ-bG-kMp"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Select Set" id="bCd-IC-fB8">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7il-Op-Clk"/>
+                                    <barButtonItem title="Drumsets" image="drums" landscapeImage="drums" style="plain" id="bCd-IC-fB8">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="7sh-5n-CMp" kind="popoverPresentation" popoverAnchorBarButtonItem="bCd-IC-fB8" id="jaQ-Yn-QYT">
@@ -740,10 +741,9 @@
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7il-Op-Clk"/>
                                     <barButtonItem style="plain" id="m9S-qR-qhA">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="b5f-he-HYS">
-                                            <rect key="frame" x="219.5" y="11" width="43" height="29"/>
+                                            <rect key="frame" x="191" y="11" width="43" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="" image="note_play"/>
@@ -757,7 +757,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="XZO-pX-Can">
                                         <segmentedControl key="customView" opaque="NO" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="3" id="JJ1-xU-con">
-                                            <rect key="frame" x="262.5" y="11" width="251" height="29"/>
+                                            <rect key="frame" x="234" y="11" width="251" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="1"/>
@@ -777,7 +777,7 @@
                                     <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="a6A-dU-Q4o"/>
                                     <barButtonItem title="Item" style="plain" id="j0k-tH-eoa">
                                         <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="tuf-Aa-Zw2">
-                                            <rect key="frame" x="533.5" y="10" width="51" height="31"/>
+                                            <rect key="frame" x="505" y="10" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" red="0.6705882353" green="0.131049201" blue="0.10913589059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </switch>
@@ -792,7 +792,7 @@
                                 </items>
                             </toolbar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-BX-jmv">
-                                <rect key="frame" x="10" y="285.5" width="683.5" height="421.5"/>
+                                <rect key="frame" x="10" y="285.5" width="683.5" height="422"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="0.67727179280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -999,7 +999,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triplet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt1-fJ-oN7">
-                                <rect key="frame" x="589" y="732" width="50" height="21"/>
+                                <rect key="frame" x="565" y="732.5" width="50" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="qVQ-ht-y8Q"/>
                                 </constraints>
@@ -1034,7 +1034,7 @@
                             <constraint firstItem="LQQ-qx-92d" firstAttribute="top" secondItem="U3W-AR-TsI" secondAttribute="top" id="bja-H8-hzf"/>
                             <constraint firstItem="vt1-fJ-oN7" firstAttribute="centerY" secondItem="fnK-1U-f2g" secondAttribute="centerY" id="cGx-R7-ncy"/>
                             <constraint firstItem="fnK-1U-f2g" firstAttribute="leading" secondItem="qF6-1Q-g2h" secondAttribute="leading" id="dfZ-jZ-1MD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vt1-fJ-oN7" secondAttribute="trailing" constant="44.5" id="oOw-IT-nLm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vt1-fJ-oN7" secondAttribute="trailing" constant="68.5" id="oOw-IT-nLm"/>
                             <constraint firstItem="fnK-1U-f2g" firstAttribute="top" secondItem="Xlf-BX-jmv" secondAttribute="bottom" constant="12" id="ojP-Sv-5I6"/>
                             <constraint firstItem="fnK-1U-f2g" firstAttribute="top" secondItem="Xlf-BX-jmv" secondAttribute="bottom" constant="10" id="pCq-Ra-BtN"/>
                             <constraint firstAttribute="trailing" secondItem="U3W-AR-TsI" secondAttribute="trailing" constant="10" id="up2-pb-PWV"/>
@@ -1068,9 +1068,11 @@
                         <outlet property="drumsetButton" destination="bCd-IC-fB8" id="nzq-yM-Tr0"/>
                         <outlet property="durationSegmentControl" destination="JJ1-xU-con" id="gId-3z-Adb"/>
                         <outlet property="iPadPatternName" destination="qAQ-gn-vfH" id="sPN-9F-3t1"/>
+                        <outlet property="leftPageButton" destination="Url-kg-Qck" id="guh-p0-E9i"/>
                         <outlet property="patternSizeButton" destination="qMr-4h-ELd" id="8i1-ne-j8u"/>
                         <outlet property="patternViewLeadingConstraint" destination="ak8-6P-bed" id="ICh-Mp-yJJ"/>
                         <outlet property="playerSegmentedControl" destination="MId-aE-PUb" id="tMn-zu-TaW"/>
+                        <outlet property="rightPageButton" destination="0Sr-bD-7nO" id="3sq-5W-yS8"/>
                         <outlet property="tempoTextField" destination="kCF-6x-iaB" id="5u3-PE-Iy8"/>
                         <outlet property="timeSignatureButton" destination="a8e-T9-W2H" id="DvC-mC-4Bh"/>
                         <outlet property="tripletSwitch" destination="tuf-Aa-Zw2" id="roX-Af-ULL"/>
@@ -2012,6 +2014,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="drums" width="30" height="30"/>
         <image name="note_play" width="5" height="12"/>
         <image name="note_rest" width="7" height="15"/>
         <image name="pattern_icon" width="37" height="37"/>

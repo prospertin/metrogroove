@@ -9,6 +9,8 @@
 import UIKit
 import AudioToolbox
 import WatchConnectivity
+import ReactiveSwift
+
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -44,6 +46,9 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
     }
     @IBOutlet weak var iPadPatternName: UITextField?
     // End iPad
+    
+    @IBOutlet weak var leftPageButton: UIBarButtonItem!
+    @IBOutlet weak var rightPageButton: UIBarButtonItem!
     
     @IBAction func onPageLeft(_ sender: AnyObject) {
         percussionPageViewController!.slideToPage(0, animation: true)
@@ -126,6 +131,11 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
             self.title = currentFileName
         }// self.navigationItem.title = "Nav new pattern";
         
+        // Observe the change in percussion page and update the arrow buttons accordingly
+        percussionPageViewController!.currentPage.signal.observeValues {value in
+            self.leftPageButton.isEnabled = value > 0
+            self.rightPageButton.isEnabled = value < 1
+        }
         setWatchConnectivity()
     }
     

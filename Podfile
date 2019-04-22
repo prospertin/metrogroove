@@ -4,7 +4,7 @@
 use_frameworks!
 
 def import_pods
-    # pod 'ReactiveCocoa', '~> 7.0'
+    
 end
 
 target 'MetroGroove WatchKit App' do
@@ -20,4 +20,5 @@ end
 target 'XGroove' do
   # Pods for XGroove
   import_pods
+  pod 'ReactiveCocoa', '~> 9.0'
 end
