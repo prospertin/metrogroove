@@ -525,7 +525,7 @@
 				TargetAttributes = {
 					B23DF3E91B53699B000918E9 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 3T7RA73QCK;
+						DevelopmentTeam = 5YY24LR368;
 						LastSwiftMigration = 1010;
 					};
 					B23DF3FD1B53699B000918E9 = {
@@ -1020,7 +1020,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				DEVELOPMENT_TEAM = 5YY24LR368;
 				INFOPLIST_FILE = MetroGroove/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1042,7 +1042,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3T7RA73QCK;
+				DEVELOPMENT_TEAM = 5YY24LR368;
 				INFOPLIST_FILE = MetroGroove/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
