@@ -38,15 +38,6 @@ class PatternTableViewController: UITableViewController, NoteViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-//        NSNotificationCenter.defaultCenter().addObserver(
-//            self,
-//            selector: "orientationChanged:",
-//            name: UIDeviceOrientationDidChangeNotification,
-//            object: UIDevice.currentDevice())
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,12 +62,14 @@ class PatternTableViewController: UITableViewController, NoteViewDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let height = tableView.bounds.height/CGFloat(self.pageViewController.instrumentList.count/2 + 1)
-        if indexPath.row > 0 && UIDevice.current.userInterfaceIdiom != .pad {
-            return height
-        }
-        else {
-            return height
-        }
+        debugPrint("Table cell height = \(height)")
+        return height
+//        if indexPath.row > 0 && UIDevice.current.userInterfaceIdiom != .pad {
+//            return height
+//        }
+//        else {
+//            return height
+//        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -166,27 +159,6 @@ class PatternTableViewController: UITableViewController, NoteViewDelegate {
     
     func orientationChanged(_ note: Notification) {
         self.tableView.reloadData()
-        //let device: UIDevice = note.object as! UIDevice
-//        switch(device.orientation)
-//        {
-//        case UIDeviceOrientation.Portrait:
-//            // code for Portrait
-//            break
-//        case UIDeviceOrientation.PortraitUpsideDown:
-//            // code for Portrait
-//            break
-//        case UIDeviceOrientation.LandscapeLeft:
-//            // code for Landscape
-//            break
-//        case UIDeviceOrientation.LandscapeRight:
-//            // code for Landscape
-//            break
-//        case UIDeviceOrientation.Unknown:
-//            // code for Unknown
-//            break
-//        default:
-//            break
-//        }
     }
     
     // Delegate

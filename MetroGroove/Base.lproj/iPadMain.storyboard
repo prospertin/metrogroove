@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ylS-6K-3Za">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ylS-6K-3Za">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -741,9 +741,10 @@
                                             </segue>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="pQq-T6-dQR"/>
                                     <barButtonItem style="plain" id="m9S-qR-qhA">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="b5f-he-HYS">
-                                            <rect key="frame" x="191" y="11" width="43" height="29"/>
+                                            <rect key="frame" x="192" y="11" width="61" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="" image="note_play"/>
@@ -757,7 +758,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="XZO-pX-Can">
                                         <segmentedControl key="customView" opaque="NO" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="3" id="JJ1-xU-con">
-                                            <rect key="frame" x="234" y="11" width="251" height="29"/>
+                                            <rect key="frame" x="253" y="11" width="251" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="1"/>
@@ -777,7 +778,7 @@
                                     <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="a6A-dU-Q4o"/>
                                     <barButtonItem title="Item" style="plain" id="j0k-tH-eoa">
                                         <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="tuf-Aa-Zw2">
-                                            <rect key="frame" x="505" y="10" width="51" height="31"/>
+                                            <rect key="frame" x="524" y="10" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" red="0.6705882353" green="0.131049201" blue="0.10913589059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </switch>
@@ -809,16 +810,16 @@
                                 </connections>
                             </containerView>
                             <visualEffectView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-qx-92d">
-                                <rect key="frame" x="30" y="28" width="16" height="210.5"/>
+                                <rect key="frame" x="30" y="60" width="16" height="178.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MiR-mw-YDG">
-                                    <rect key="frame" x="0.0" y="0.0" width="16" height="210.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="178.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <gestureRecognizers/>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="alr-Ut-ZQZ"/>
                                 </constraints>
-                                <blurEffect style="light"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d98-Zt-SRf">
                                 <rect key="frame" x="339.5" y="112" width="25" height="66"/>
@@ -1014,6 +1015,7 @@
                             <constraint firstAttribute="trailing" secondItem="iOB-p4-zGi" secondAttribute="trailing" constant="10" id="1c3-Fr-ekZ"/>
                             <constraint firstItem="tng-Dt-uKP" firstAttribute="top" secondItem="vt1-fJ-oN7" secondAttribute="bottom" constant="15" id="1gW-cc-dkU"/>
                             <constraint firstItem="Xlf-BX-jmv" firstAttribute="leading" secondItem="qF6-1Q-g2h" secondAttribute="leading" constant="10" id="2IQ-ZZ-39z"/>
+                            <constraint firstItem="LQQ-qx-92d" firstAttribute="top" secondItem="U3W-AR-TsI" secondAttribute="top" constant="32" id="2iK-4y-uhI"/>
                             <constraint firstItem="vt1-fJ-oN7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qF6-1Q-g2h" secondAttribute="leading" constant="20" symbolic="YES" id="4eT-h9-f1a"/>
                             <constraint firstItem="tng-Dt-uKP" firstAttribute="top" secondItem="fnK-1U-f2g" secondAttribute="bottom" id="4nY-Td-mLS"/>
                             <constraint firstItem="Xlf-BX-jmv" firstAttribute="top" secondItem="iOB-p4-zGi" secondAttribute="bottom" id="64b-7D-0h5"/>
@@ -1031,7 +1033,6 @@
                             <constraint firstAttribute="trailing" secondItem="fnK-1U-f2g" secondAttribute="trailing" id="SeL-8D-ZOP"/>
                             <constraint firstAttribute="bottom" secondItem="Xlf-BX-jmv" secondAttribute="bottom" constant="56" id="WeX-4q-1vK"/>
                             <constraint firstItem="U3W-AR-TsI" firstAttribute="leading" secondItem="qF6-1Q-g2h" secondAttribute="leading" constant="10" id="ak8-6P-bed"/>
-                            <constraint firstItem="LQQ-qx-92d" firstAttribute="top" secondItem="U3W-AR-TsI" secondAttribute="top" id="bja-H8-hzf"/>
                             <constraint firstItem="vt1-fJ-oN7" firstAttribute="centerY" secondItem="fnK-1U-f2g" secondAttribute="centerY" id="cGx-R7-ncy"/>
                             <constraint firstItem="fnK-1U-f2g" firstAttribute="leading" secondItem="qF6-1Q-g2h" secondAttribute="leading" id="dfZ-jZ-1MD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vt1-fJ-oN7" secondAttribute="trailing" constant="68.5" id="oOw-IT-nLm"/>
@@ -1063,6 +1064,7 @@
                     <connections>
                         <outlet property="barNumber" destination="d98-Zt-SRf" id="GOH-Rb-tsK"/>
                         <outlet property="cursorLeadingConstraint" destination="SYO-fC-RZh" id="SaC-OP-kfw"/>
+                        <outlet property="cursorTopConstraint" destination="2iK-4y-uhI" id="1Kp-jf-Ihj"/>
                         <outlet property="cursorView" destination="LQQ-qx-92d" id="6TK-pr-9DK"/>
                         <outlet property="cursorWidthConstraint" destination="alr-Ut-ZQZ" id="qvZ-b6-tss"/>
                         <outlet property="drumsetButton" destination="bCd-IC-fB8" id="nzq-yM-Tr0"/>
@@ -2015,10 +2017,10 @@
     </scenes>
     <resources>
         <image name="drums" width="30" height="30"/>
-        <image name="note_play" width="5" height="12"/>
-        <image name="note_rest" width="7" height="15"/>
-        <image name="pattern_icon" width="37" height="37"/>
-        <image name="project_icon" width="37" height="37"/>
+        <image name="note_play" width="5" height="12.5"/>
+        <image name="note_rest" width="7.5" height="15"/>
+        <image name="pattern_icon" width="37.5" height="37.5"/>
+        <image name="project_icon" width="37.5" height="37.5"/>
     </resources>
     <color key="tintColor" red="0.50588235290000005" green="0.090196078430000007" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

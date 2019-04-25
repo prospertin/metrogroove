@@ -64,7 +64,7 @@ class PatchManager: NSObject {
     
     func getTrackIndexForPatchValue(_ patch:Int) -> Int {
         if let soundEnum = DrumSoundEnum(rawValue: UInt8(patch)){
-            if let index = patchList.index(of: soundEnum) {
+            if let index = patchList.firstIndex(of: soundEnum) {
                 return index
             }
         }
