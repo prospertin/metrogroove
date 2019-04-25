@@ -724,7 +724,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fnK-1U-f2g">
-                                <rect key="frame" x="0.0" y="717.5" width="703.5" height="50.5"/>
+                                <rect key="frame" x="0.0" y="717" width="703.5" height="51"/>
                                 <items>
                                     <barButtonItem enabled="NO" title="&lt;" style="done" id="Url-kg-Qck">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -793,7 +793,7 @@
                                 </items>
                             </toolbar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-BX-jmv">
-                                <rect key="frame" x="10" y="285.5" width="683.5" height="422"/>
+                                <rect key="frame" x="10" y="285.5" width="683.5" height="421.5"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="0.67727179280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -809,17 +809,31 @@
                                     <segue destination="GcF-KO-a4C" kind="embed" identifier="patternsSegue" id="BCA-Tw-58r"/>
                                 </connections>
                             </containerView>
-                            <visualEffectView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-qx-92d">
+                            <visualEffectView opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-qx-92d">
                                 <rect key="frame" x="30" y="60" width="16" height="178.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MiR-mw-YDG">
                                     <rect key="frame" x="0.0" y="0.0" width="16" height="178.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UT-ed-fsH">
+                                            <rect key="frame" x="0.0" y="0.0" width="4" height="178.5"/>
+                                            <color key="backgroundColor" red="0.97680455450000003" green="0.10584375999879363" blue="0.15495467883369096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="4" id="iHl-HE-gT6"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
                                     <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="8UT-ed-fsH" secondAttribute="bottom" id="Cpm-8h-5dL"/>
+                                        <constraint firstItem="8UT-ed-fsH" firstAttribute="leading" secondItem="MiR-mw-YDG" secondAttribute="leading" id="FfX-8a-Vyo"/>
+                                        <constraint firstItem="8UT-ed-fsH" firstAttribute="top" secondItem="MiR-mw-YDG" secondAttribute="top" id="pRI-Zc-OSv"/>
+                                    </constraints>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="alr-Ut-ZQZ"/>
                                 </constraints>
-                                <blurEffect style="prominent"/>
+                                <blurEffect style="dark"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d98-Zt-SRf">
                                 <rect key="frame" x="339.5" y="112" width="25" height="66"/>
@@ -1000,7 +1014,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triplet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt1-fJ-oN7">
-                                <rect key="frame" x="565" y="732.5" width="50" height="20.5"/>
+                                <rect key="frame" x="565" y="732" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="qVQ-ht-y8Q"/>
                                 </constraints>
@@ -1082,7 +1096,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQ7-hW-9FF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2081" y="181"/>
+            <point key="canvasLocation" x="-2083.0078125" y="180.46875"/>
         </scene>
         <!--Percussion Page View Controller-->
         <scene sceneID="9EH-6t-ye4">
