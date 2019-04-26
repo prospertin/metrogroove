@@ -809,7 +809,7 @@
                                     <segue destination="GcF-KO-a4C" kind="embed" identifier="patternsSegue" id="BCA-Tw-58r"/>
                                 </connections>
                             </containerView>
-                            <visualEffectView opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-qx-92d">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-qx-92d">
                                 <rect key="frame" x="30" y="60" width="16" height="178.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MiR-mw-YDG">
                                     <rect key="frame" x="0.0" y="0.0" width="16" height="178.5"/>
@@ -833,7 +833,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="alr-Ut-ZQZ"/>
                                 </constraints>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="extraLight"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d98-Zt-SRf">
                                 <rect key="frame" x="339.5" y="112" width="25" height="66"/>
