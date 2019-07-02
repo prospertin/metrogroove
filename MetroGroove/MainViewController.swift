@@ -62,8 +62,10 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
     
     @IBOutlet weak var playerSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tempoTextField: UITextField!
+   
     @IBOutlet weak var cursorView: UIVisualEffectView!
    
+    @IBOutlet weak var cursorTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var cursorWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var cursorLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var patternViewLeadingConstraint: NSLayoutConstraint!
@@ -291,29 +293,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
             return 0.125
         }
     }
-    
-//    func forwardSequence(timer:NSTimer){
-//        if PlayerControlEnum(rawValue:playerSegmentedControl.selectedSegmentIndex) == PlayerControlEnum.Forward {
-//            if sequencer.midiPlayerForward() == false {
-//                timer.invalidate()
-//                playerSegmentedControl.selectedSegmentIndex = PlayerControlEnum.Deselect.rawValue
-//            }
-//        } else {
-//            timer.invalidate()
-//        }
-//    }
-//    
-//    func rewindSequence(timer:NSTimer){
-//        if PlayerControlEnum(rawValue:playerSegmentedControl.selectedSegmentIndex) == PlayerControlEnum.Rewind {
-//            if sequencer.midiPlayerRewind() == false {
-//                timer.invalidate()
-//                playerSegmentedControl.selectedSegmentIndex = PlayerControlEnum.Deselect.rawValue
-//            }
-//        } else {
-//            timer.invalidate()
-//        }
-//    }
-//    
+
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -381,13 +361,8 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
     func moveCursorToBeat(_ beat:Float){
         //find beats relative to current bar
         let quarterNotePerBar = self.settingManager.beatCountPerBar()
-//        self.settingManager.lowerTimeSignature == 8 ?
-//            Float(self.settingManager.upperTimeSignature/2) :
-//            Float(self.settingManager.upperTimeSignature)
-        
         let relativeBeat = beat.truncatingRemainder(dividingBy: quarterNotePerBar)
         
-       //let tableFrame = self.patternPageViewController.tableView.superview?.frame
         let tableFrame = self.patternPageViewController.getCurrentTableFrame()        // var location = cursorView.frame.origin
         let x = self.patternViewLeadingConstraint.constant +
             (tableFrame.origin.x) +
@@ -465,6 +440,8 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
 //                self.cursorWidthConstraint.constant = width
 //            }
             self.cursorWidthConstraint.constant = width
+            let height = self.patternPageViewController.getCurrentTableFrame().height/CGFloat(self.patternPageViewController.instrumentList.count/2 + 1)
+            self.cursorTopConstraint?.constant = height
             self.moveCursorToBeat(self.patternPageViewController.absCursorBeatPosition)
         });
     }
