@@ -441,7 +441,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, PopoverMenuDele
 //            }
             self.cursorWidthConstraint.constant = width
             let height = self.patternPageViewController.getCurrentTableFrame().height/CGFloat(self.patternPageViewController.instrumentList.count/2 + 1)
-            self.cursorTopConstraint.constant = height
+            self.cursorTopConstraint?.constant = height
             self.moveCursorToBeat(self.patternPageViewController.absCursorBeatPosition)
         });
     }
